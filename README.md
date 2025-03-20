@@ -51,6 +51,5 @@ You can download my resume [here](assets/resume.pdf).
 You can reach me at the following:
 - **Email**: [bchathurya78@gmail.com](mailto:bchathurya78@gmail.com)
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/chathurya-b-a903b9179/)
-- **Phone**: +1 (816)-715-8770
 
 Feel free to contact me for job opportunities, collaborations, or any other inquiries.
