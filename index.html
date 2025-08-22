@@ -3,116 +3,556 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chathurya Burraveni - Java Full-Stack Engineer. Experienced developer specializing in Spring Boot, React.js, and cloud technologies.">
+    <meta property="og:title" content="Chathurya Burraveni - Portfolio">
+    <meta property="og:description" content="Java Full-Stack Engineer with expertise in modern web technologies and cloud solutions.">
+    <meta property="og:image" content="profile.jpeg">
     <title>Chathurya Burraveni - Portfolio</title>
-    <head>Chathurya Burraveni - Portfolio</head>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="profile.jpeg" as="image">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <img src="profile.jpeg" alt="Profile Picture">
-            <h1>Chathurya Burraveni</h1>
-            <p>Java Full Stack Developer | USA</p>
-            <p><a href="mailto:bchathurya78@gmail.com">bchathurya78@gmail.com</a></p>
-            <p><a href="https://www.linkedin.com/in/chathurya-b-5a48a42ab/">linkedin</a></p>
-            <div class="nav">
-                <button onclick="scrollToSection('about me')">About me</button>
-                <button onclick="scrollToSection('skills')">Skills</button>
-                <button onclick="scrollToSection('experience')">Experience</button>
-                <button onclick="scrollToSection('resume')">Resume</button>
-                <button onclick="scrollToSection('education')">Education</button>
-                <button onclick="scrollToSection('certifications')">Certifications</button>
+    <!-- Skip to main content -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress"></div>
+    
+
+
+    <header class="header">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="#home" class="logo">CB</a>
             </div>
             
-            
-        </header>
-
-        <section id="about me">
-            <h2>About me</h2>
-            <p>Results-driven Java Full Stack Developer with 4+ years of experience in web applications and microservices development. Proficient in Java (Spring Boot, Hibernate), React.js, RESTful APIs, PostgreSQL, and MongoDB. Skilled in cloud deployment (AWS, Docker, Kubernetes), CI/CD automation, and security best practices (OAuth 2.0, JWT, RBAC). Strong problem-solving abilities with expertise in performance optimization, scalable architecture, and Agile methodologies. Passionate about building efficient, secure, and scalable applications. Currently working at Dell Technologies, USA and seeking opportunities in innovative development teams. 🚀</p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-item"><span>Languages:</span> <span>Core Java, SQL</span></div>
-                <div class="skill-item"><span>Frameworks:</span> <span>Spring MVC, JSF, Hibernate, Node.js, React.js, Spring Boot, Microservices, Spring Security, Angular</span></div>
-                <div class="skill-item"><span>Cloud:</span> <span>AWS, Docker</span></div>
-                <div class="skill-item"><span>J2EE Technologies:</span> <span>Servlets, JSP, JSTL, JavaBeans, JDBC</span></div>
-                <div class="skill-item"><span>Web Technologies:</span> <span>HTML, CSS, JavaScript, Bootstrap, jQuery, AJAX, JSON, XML</span></div>
-                <div class="skill-item"><span>Application Server:</span> <span>Apache Tomcat, WebSphere, AWS, Azure</span></div>
-                <div class="skill-item"><span>Database:</span> <span>MySQL, PostgreSQL, MongoDB, NoSQL</span></div>
-                <div class="skill-item"><span>Build / Other Tools:</span> <span>UML, MS Visio, Maven, Gradle, JUnit, Jenkins</span></div>
-                <div class="skill-item"><span>Version Control Tools:</span> <span>Git, GitHub, Jira, Trello</span></div>
-                <div class="skill-item"><span>IDEs:</span> <span>NetBeans, IntelliJ IDEA, Eclipse, VS Code</span></div>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link" aria-current="page">Home</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#resume" class="nav-link">Resume</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-        </section>
-        
+            
+            <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </nav>
+        <div class="header-gradient" aria-hidden="true"></div>
+    </header>
 
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <h3>Dell Technologies (Sep 2024 - Present)</h3>
-            <h4>Java Full Stack Developer</h4>
-            <ul>
-                <li>Architected and implemented scalable microservices using Spring Boot, Java, and Hibernate, reducing system downtime by 30%.</li>
-                <li>Developed secure RESTful APIs with JWT-based authentication, ensuring seamless and protected integration with front-end applications.</li>
-                <li>Optimized database performance for PostgreSQL and MongoDB, enhancing query execution speed by 50% and reducing system load.</li>
-                <li>Modernized legacy monolithic applications by migrating to a microservices architecture, improving deployment flexibility and cutting release cycle time by 40%.</li>
-                <li>Enhanced front-end efficiency using React.js with lazy loading, Redux for state management, and Webpack optimization, reducing load time by 35%.</li>
-                <li>Automated CI/CD pipelines with Jenkins, Docker, and Kubernetes, ensuring zero-downtime deployments in production environments.</li>
-                <li>Strengthened application security by implementing OAuth 2.0, Spring Security, role-based access control (RBAC), and API rate limiting, ensuring regulatory compliance.</li>
-            </ul>
-            <h3>LME Services, KS, USA(May 2024 - Aug 2024)</h3>
-            <h4>Software Developer</h4>
-            <ul>
-                <li>Developed and maintained scalable web applications using Spring Boot, Java, and React.js, delivering high performance and seamless user experiences.</li>
-                <li>Designed and optimized GraphQL and RESTful APIs, reducing network payload size by 30% and enhancing data retrieval efficiency.</li>
-                <li>Refactored backend services, improving maintainability, reducing technical debt, and cutting API response time by 40%.</li>
-                <li>Implemented asynchronous microservices communication using Kafka and RabbitMQ, enabling real-time event-driven processing.</li>
-                <li>Strengthened authentication and authorization with OAuth 2.0, JWT, and Spring Security, ensuring secure access control and industry compliance.</li>
-            </ul>
-            <h3>Tata Consultancy Services (TCS), India (Jul 2021 - Jan 2023)</h3>
-            <h4>Assistant System Engineer / Software Developer</h4>
-            <ul>
-                <li>Engineered scalable enterprise applications using Spring MVC, Hibernate, and JSP, improving business process automation and system efficiency.</li>
-                <li>Optimized database performance by designing efficient SQL queries with indexing and partitioning, reducing query execution time by 45%.</li>
-                <li>Integrated third-party APIs (payment gateways, geolocation services) with Spring Boot microservices, streamlining transactions and external service communication.</li>
-                <li>Developed real-time monitoring dashboards with React.js, D3.js, and WebSockets, enabling live application performance tracking and proactive issue resolution.</li>
-                <li>Automated CI/CD pipelines with Jenkins, Maven, and Docker, reducing deployment failures by 30% and accelerating production releases.</li>
-            </ul>
-            <h3>BrownFrame Technologies, India(Dec 2019 - Jun 2021)</h3>
-            <h4>front-end Developer</h4>
-            <ul>
-                <li>Developed dynamic Single Page Applications (SPAs) using React.js and Redux, enhancing user engagement and interactivity.</li>
-                <li>Implemented real-time WebSocket notifications, enabling instant updates for live applications such as chat and stock market platforms.</li>
-                <li>Optimized front-end performance by leveraging Server-Side Rendering (SSR) and lazy loading, improving initial page load time by 45%.</li>
-                <li>Designed responsive and accessible UI components using Bootstrap, Tailwind CSS, and Material-UI, ensuring cross-browser compatibility and WCAG 2.1 compliance.</li>
-                <li>Streamlined front-end and back-end integration by collaborating with backend engineers to define efficient API contracts, ensuring seamless data flow and system efficiency.</li>
-            </ul>
+    <main id="main" class="main">
+        <div class="container">
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="hero-image">
+                            <img src="profile.jpeg" alt="Chathurya Burraveni" width="200" height="200">
+                        </div>
+                        <div class="hero-text">
+                            <h1 class="hero-title">Chathurya Burraveni</h1>
+                            <p class="hero-subtitle">Java Full-Stack Engineer<br>Spring Boot · React · AWS</p>
+                            <p class="hero-description">
+                                Full Stack Java Developer with 4+ years of experience building scalable web applications using Java, Spring Boot, Hibernate, and 
+                                RESTful/GraphQL APIs. Proficient in React, Angular, and TypeScript for developing responsive, cross-browser-compatible 
+                                frontends. Skilled in managing microservices architecture, implementing CI/CD pipelines with Jenkins, Docker, and GitHub 
+                                Actions, and deploying containerized services to AWS (EC2, S3, Lambda, RDS) and Kubernetes clusters. Strong in SQL and 
+                                database optimization across MySQL, PostgreSQL, and Oracle, with experience in Redis and Kafka for caching and event 
+                                streaming. Experienced in OAuth2, JWT, and Spring Security for secure authentication, with thorough testing practices using 
+                                JUnit, Mockito, and Cypress.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
 
-        </section>
+            <!-- Skills Section -->
+            <section id="skills" class="section reveal">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category card">
+                        <h3>Programming & Scripting</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Java</span>
+                            <span class="skill-chip chip">JavaScript</span>
+                            <span class="skill-chip chip">TypeScript</span>
+                            <span class="skill-chip chip">Python</span>
+                            <span class="skill-chip chip">C#</span>
+                            <span class="skill-chip chip">C</span>
+                            <span class="skill-chip chip">C++</span>
+                            <span class="skill-chip chip">HTML5</span>
+                            <span class="skill-chip chip">CSS3</span>
+                            <span class="skill-chip chip">SQL</span>
+                            <span class="skill-chip chip">Bash</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Spring Boot</span>
+                            <span class="skill-chip chip">Spring MVC</span>
+                            <span class="skill-chip chip">Spring Security</span>
+                            <span class="skill-chip chip">Spring Data JPA</span>
+                            <span class="skill-chip chip">Hibernate</span>
+                            <span class="skill-chip chip">JPA</span>
+                            <span class="skill-chip chip">Angular</span>
+                            <span class="skill-chip chip">React.js</span>
+                            <span class="skill-chip chip">RxJS</span>
+                            <span class="skill-chip chip">NgRx</span>
+                            <span class="skill-chip chip">Bootstrap</span>
+                            <span class="skill-chip chip">Material UI</span>
+                            <span class="skill-chip chip">Vue.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>API & Microservices Development</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">RESTful API Design</span>
+                            <span class="skill-chip chip">Microservices Architecture</span>
+                            <span class="skill-chip chip">GraphQL</span>
+                            <span class="skill-chip chip">OpenAPI</span>
+                            <span class="skill-chip chip">Monolithic to Microservices Migration</span>
+                            <span class="skill-chip chip">API Documentation (Swagger, Postman)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">AWS (EC2, S3, Lambda, RDS, CloudWatch)</span>
+                            <span class="skill-chip chip">Docker</span>
+                            <span class="skill-chip chip">Kubernetes</span>
+                            <span class="skill-chip chip">Jenkins</span>
+                            <span class="skill-chip chip">GitHub Actions</span>
+                            <span class="skill-chip chip">CI/CD Pipeline Implementation</span>
+                            <span class="skill-chip chip">Serverless Architecture</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Database Management</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">MySQL</span>
+                            <span class="skill-chip chip">PostgreSQL</span>
+                            <span class="skill-chip chip">Oracle DB</span>
+                            <span class="skill-chip chip">Hibernate ORM</span>
+                            <span class="skill-chip chip">Redis</span>
+                            <span class="skill-chip chip">Query Optimization</span>
+                            <span class="skill-chip chip">Stored Procedures</span>
+                            <span class="skill-chip chip">Complex Joins</span>
+                            <span class="skill-chip chip">Indexing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Event Streaming & Messaging</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Apache Kafka</span>
+                            <span class="skill-chip chip">RabbitMQ</span>
+                            <span class="skill-chip chip">Event-Driven Architecture</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Security & Authentication</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">OAuth2.0</span>
+                            <span class="skill-chip chip">JWT</span>
+                            <span class="skill-chip chip">Spring Security</span>
+                            <span class="skill-chip chip">Role-Based Access Control</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Version Control & Collaboration</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Git</span>
+                            <span class="skill-chip chip">GitHub</span>
+                            <span class="skill-chip chip">Bitbucket</span>
+                            <span class="skill-chip chip">Branching Strategy</span>
+                            <span class="skill-chip chip">Code Reviews</span>
+                            <span class="skill-chip chip">Merge Conflict Resolution</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Agile Methodologies & Tools</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Agile (Scrum, Sprint Planning, Retrospective)</span>
+                            <span class="skill-chip chip">Jira</span>
+                            <span class="skill-chip chip">Confluence</span>
+                            <span class="skill-chip chip">Trello</span>
+                            <span class="skill-chip chip">Asana</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Build & Deployment Tools</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Maven</span>
+                            <span class="skill-chip chip">Gradle</span>
+                            <span class="skill-chip chip">Docker</span>
+                            <span class="skill-chip chip">Jenkins</span>
+                            <span class="skill-chip chip">GitHub Actions</span>
+                            <span class="skill-chip chip">CI/CD Setup (Dev–Staging–Prod)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>UI/UX & Front-End Optimization</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">Responsive Web Design</span>
+                            <span class="skill-chip chip">Cross-Browser Compatibility</span>
+                            <span class="skill-chip chip">Lazy Loading</span>
+                            <span class="skill-chip chip">Performance Optimization</span>
+                            <span class="skill-chip chip">Collaboration with UI/UX Teams</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Testing & Quality Assurance</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">JUnit</span>
+                            <span class="skill-chip chip">Mockito</span>
+                            <span class="skill-chip chip">Cypress</span>
+                            <span class="skill-chip chip">Selenium</span>
+                            <span class="skill-chip chip">Postman Tests</span>
+                            <span class="skill-chip chip">SonarQube</span>
+                            <span class="skill-chip chip">Code Coverage</span>
+                        </div>
+                    </div>
+                    <div class="skill-category card">
+                        <h3>Software & IDEs</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip chip">IntelliJ IDEA</span>
+                            <span class="skill-chip chip">Eclipse</span>
+                            <span class="skill-chip chip">Visual Studio Code</span>
+                            <span class="skill-chip chip">Postman</span>
+                            <span class="skill-chip chip">Swagger UI</span>
+                            <span class="skill-chip chip">Microsoft Office Suite</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
 
-        <section id="resume">
-            <h2>Resume</h2>
-            <a href="My_resume.pdf" class="resume-btn" target="_blank"> Download Resume</a>
-        </section>
+            <!-- Experience Section -->
+            <section id="experience" class="section reveal">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-card card">
+                        <div class="experience-header">
+                            <h3>Full Stack Java Developer</h3>
+                            <span class="experience-company">Dell Technologies</span>
+                            <span class="experience-dates">Sep 2024 - Present</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Built 18+ RESTful and GraphQL APIs using Spring Boot and Hibernate, reducing backend latency by 23% and enabling consistent data exchange across customer-facing and internal microservices</li>
+                            <li>Integrated React.js frontends with REST services using Axios and RxJS, improving page load time by 30% and optimizing user experience across multiple cross-browser enterprise applications</li>
+                            <li>Decomposed legacy monolithic modules into independent microservices deployed via Docker and Kubernetes, reducing service startup time from 90 seconds to 12 seconds in production environments</li>
+                            <li>Automated CI/CD pipelines using Jenkins and GitHub Actions, reducing deployment cycle time by 65% and eliminating manual errors across five non-prod and prod environments</li>
+                            <li>Tuned complex SQL queries and indexes in PostgreSQL and Oracle, cutting report execution time from 2 minutes to 28 seconds and improving dashboard performance for analysts</li>
+                            <li>Applied Spring Security, OAuth2, and JWT for API authentication, passing all security audits with 100% compliance and minimizing access violations across protected service endpoints</li>
+                            <li>Created monitoring alerts using Postman Tests and AWS CloudWatch, resolving critical errors within SLAs and reducing recurring outages by 42% on high-traffic backend services</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card card">
+                        <div class="experience-header">
+                            <h3>Full Stack Java Developer</h3>
+                            <span class="experience-company">LME Services</span>
+                            <span class="experience-dates">May 2024 - Aug 2024</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Developed Spring Boot microservice for document workflows, reducing manual verification by 45% and slashing average transaction time from 3 minutes to just under 40 seconds</li>
+                            <li>Built responsive interfaces using React.js and Material UI, improving user task completion rates by 22% and reducing frontend related support tickets across two internal tools</li>
+                            <li>Enforced JWT-based authentication with Spring Security, eliminating unauthorized access and improving compliance readiness as verified through internal security team audits and penetration test results</li>
+                            <li>Deployed CI/CD using Jenkins and Docker, cutting deployment time from 25 minutes to under 9 and stabilizing release cycles across dev, QA, and production stages</li>
+                            <li>Refactored four synchronous APIs into asynchronous REST services, reducing overall response latency from 500 milliseconds to 120 milliseconds under peak system load</li>
+                            <li>Used Jira and Confluence to manage user stories and sprints, completing 100% of assigned features across three release cycles without spillover or delay</li>
+                            <li>Optimized complex MySQL joins and stored procedures, improving average query response time by 37% and reducing timeout failures in financial report generation modules</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card card">
+                        <div class="experience-header">
+                            <h3>Software Developer</h3>
+                            <span class="experience-company">Tata Consultancy Services (TCS)</span>
+                            <span class="experience-dates">Jul 2021 - Jan 2023</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Developed enterprise CRM modules using Spring MVC and JPA, supporting over 1.2 million users and reducing module load times by more than 40% through optimized logic</li>
+                            <li>Created Angular-based web components with Bootstrap and RxJS, decreasing UI latency by 33% and improving accessibility across dashboards used by internal operations and partner stakeholders</li>
+                            <li>Designed and executed unit tests with JUnit and Mockito, achieving 82% coverage and reducing post-deployment bug rates by 40% across three high-volume backend services</li>
+                            <li>Tuned Oracle SQL queries and optimized indexes, reducing reporting workloads by 70% and improving batch job completion from 5 minutes to under 1 minute</li>
+                            <li>Authored Swagger API documentation for 15+ endpoints, accelerating new developer onboarding and minimizing support dependencies across deployment and QA teams</li>
+                            <li>Implemented OAuth2-based single sign-on for internal web tools, standardizing access control across three platforms and eliminating user credential duplication</li>
+                            <li>Reviewed code and resolved merge conflicts using Git and Bitbucket, maintaining version control discipline and reducing release rollbacks by 100% across production branches</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-card card">
+                        <div class="experience-header">
+                            <h3>Front-End Developer</h3>
+                            <span class="experience-company">BrownFrame Technologies</span>
+                            <span class="experience-dates">Dec 2019 - Jun 2021</span>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Designed Angular-based responsive interfaces using HTML5, CSS3, and Bootstrap, reducing bounce rates by 28% and improving session duration on customer-facing portals</li>
+                            <li>Connected UI with backend REST APIs using RxJS and NgRx, enabling real-time updates on pricing, inventory, and billing dashboards for three major B2B SaaS products</li>
+                            <li>Rebuilt legacy jQuery pages into Angular 9 modules, improving code maintainability and reducing technical debt by over 35% across customer engagement tools</li>
+                            <li>Created reusable UI component libraries with Material UI and Bootstrap, accelerating page builds and reducing frontend sprint delivery time by 40% across five projects</li>
+                            <li>Optimized 20+ high-traffic pages for performance, reducing load time to under 1.5 seconds on mobile networks, verified using Lighthouse and Chrome DevTools</li>
+                            <li>Wrote Cypress tests covering core UI interactions, identifying 30+ bugs during staging and ensuring defect-free releases for every major product update</li>
+                            <li>Coordinated with backend engineers and QA teams using Jira and Trello, resolving 100% of assigned tickets within SLAs during a 6-month client-facing delivery cycle</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <p>M.S. in Computer Science - University of Central Missouri(Jan 2023 - Aug 2024)</p>
-            <p>Bachelors in Information Technology- Sreenidhi Institute of Science and Technology(May 2017 - Jun 2021)</p>
-        </section>
+            <!-- Projects Section -->
+            <section id="projects" class="section reveal">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card card">
+                        <h3>TalkMate - AI English Speaking Coach</h3>
+                        <p>An AI-powered English speaking and grammar coach using GPT and Spring Boot + React. Features real-time language assessment, personalized feedback, and interactive learning modules.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip chip">Spring Boot</span>
+                            <span class="tech-chip chip">React.js</span>
+                            <span class="tech-chip chip">GPT API</span>
+                            <span class="tech-chip chip">AI/ML</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chathurya012-ai/TalkMate" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card card">
+                        <h3>Zealthy Onboarding Flow</h3>
+                        <p>Custom onboarding flow coding exercise for Zealthy. Built with TypeScript, Java backend, and modern web technologies. Features user registration, multi-step forms, and responsive design.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip chip">TypeScript</span>
+                            <span class="tech-chip chip">Java</span>
+                            <span class="tech-chip chip">React.js</span>
+                            <span class="tech-chip chip">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chathurya012-ai/zealthy-onboarding-flow" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card card">
+                        <h3>MM Cancel Flow Task</h3>
+                        <p>Subscription cancellation flow implementation with A/B testing capabilities. Features user analytics, conversion tracking, and modern UI/UX design patterns for subscription management.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip chip">TypeScript</span>
+                            <span class="tech-chip chip">React.js</span>
+                            <span class="tech-chip chip">A/B Testing</span>
+                            <span class="tech-chip chip">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chathurya012-ai/mm-cancel-flow-task-chathurya" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
 
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>AWS Certified Cloud Practitioner</li>
-                <li>NPTEL - Joy of Computing using Python (Elite Silver, 87%)</li>
-                <li>TCS Career Edge - Knockdown the Lockdown (Comprehensive course on AI, IT fundamentals, accounting,
-                    communication, and presentation skills)</li>
-                <li>Python Basics - Coursera</li>
-            </ul>
-        </section>
+            <!-- Education Section -->
+            <section id="education" class="section reveal">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-card card">
+                        <h3>M.S. in Computer Science</h3>
+                        <p class="education-school">University of Central Missouri</p>
+                        <p class="education-dates">Jan 2023 - Aug 2024</p>
+                        <p class="education-details">Specialized in software engineering and cloud computing with focus on distributed systems and machine learning applications.</p>
+                    </div>
+                    
+                    <div class="education-card card">
+                        <h3>Bachelors in Information Technology</h3>
+                        <p class="education-school">Sreenidhi Institute of Science and Technology</p>
+                        <p class="education-dates">May 2017 - Jun 2021</p>
+                        <p class="education-details">Comprehensive study of information technology fundamentals, web development, and database management systems.</p>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="certificates" class="section reveal">
+                <h2 class="section-title">Certificates</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-card card">
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <p class="certificate-issuer">Amazon Web Services</p>
+                        <p class="certificate-year">2024</p>
+                    </div>
+                    
+                    <div class="certificate-card card">
+                        <h3>Joy of Computing using Python</h3>
+                        <p class="certificate-issuer">NPTEL (Elite Silver, 87%)</p>
+                        <p class="certificate-year">2023</p>
+                    </div>
+                    
+                    <div class="certificate-card card">
+                        <h3>TCS Career Edge - Knockdown the Lockdown</h3>
+                        <p class="certificate-issuer">Tata Consultancy Services</p>
+                        <p class="certificate-year">2021</p>
+                    </div>
+                    
+                    <div class="certificate-card card">
+                        <h3>Python Basics</h3>
+                        <p class="certificate-issuer">Coursera</p>
+                        <p class="certificate-year">2020</p>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <section id="resume" class="section reveal">
+                <h2 class="section-title">Resume</h2>
+                <div class="resume-container">
+                    <div class="resume-viewer card">
+                        <iframe src="My_resume.pdf" width="100%" height="600" title="Chathurya Burraveni Resume"></iframe>
+                    </div>
+                    <div class="resume-actions">
+                        <a href="My_resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                    </div>
+                </div>
+                
+                <!-- Get in Touch Section -->
+                <div class="contact-block">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-links">
+                        <button class="contact-link" onclick="showEmailPopup()">Email</button>
+                        <button class="contact-link" onclick="showPhonePopup()">Phone</button>
+                        <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
+                        <a href="https://github.com/Chathurya012-ai" class="contact-link" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section reveal">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-container">
+                    <div class="contact-info card">
+                        <h3>Get in Touch</h3>
+                        <p>I'm always interested in hearing about new opportunities and exciting projects. Feel free to reach out!</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <h4>Email</h4>
+                                <button class="contact-btn" onclick="showEmailPopup()">bchathurya78@gmail.com</button>
+                            </div>
+                            <div class="contact-method">
+                                <h4>Phone</h4>
+                                <button class="contact-btn" onclick="showPhonePopup()">+1 850-816-0994</button>
+                            </div>
+                            <div class="contact-method">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/chathurya-burraveni-a903b9179/" class="contact-btn" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                            </div>
+                            <div class="contact-method">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/Chathurya012-ai" class="contact-btn" target="_blank" rel="noopener">View on GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div aria-live="polite" class="sr-only" id="section-announcement"></div>
+
+    <!-- Celebratory Popup -->
+    <div id="celebrationPopup" class="celebration-popup">
+        <div class="popup-content">
+            <div class="popup-icon" id="popupIcon">🎉</div>
+            <div class="popup-title" id="popupTitle">Contact Information</div>
+            <div class="popup-info" id="popupInfo">Your contact info will appear here!</div>
+            <button class="copy-btn" id="copyBtn" onclick="copyToClipboard()">Copy</button>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
