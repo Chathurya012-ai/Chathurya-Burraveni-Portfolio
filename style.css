@@ -1212,8 +1212,8 @@ body {
     top: 80px;
     left: 0;
     right: 0;
-    background-color: var(--color-surface);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--color-border);
     flex-direction: column;
     padding: var(--space-4);
@@ -1221,7 +1221,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   }
 
   .nav-links.active {
@@ -1244,6 +1244,12 @@ body {
   .nav-links .nav-link:focus {
     background-color: var(--color-accent);
     color: var(--color-primary);
+  }
+
+  /* Dark mode override for mobile nav */
+  [data-theme="dark"] .nav-links {
+    background-color: rgba(26, 26, 26, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
 
   .nav-toggle {
