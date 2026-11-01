@@ -1,0 +1,9 @@
+{
+  "name": "chathurya-burraveni-portfolio",
+  "private": true,
+  "description": "Static GitHub Pages portfolio for Chathurya Burraveni",
+  "scripts": {
+    "preview": "npx --yes serve -l 5500 .",
+    "test": "node --test tests/portfolio.test.js"
+  }
+}

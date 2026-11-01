@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Local resume extracts (do not publish) ###
+_resume_extract.txt
+_resume_latest.txt
