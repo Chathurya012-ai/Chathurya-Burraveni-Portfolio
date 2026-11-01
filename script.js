@@ -37,6 +37,8 @@
     }
   });
 
+  window.addEventListener("hashchange", closeMenu);
+
   window.addEventListener(
     "scroll",
     () => {

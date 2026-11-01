@@ -100,14 +100,14 @@ describe("hero, identity, and contact", () => {
     assert.match(html, />Software Developer</);
     assert.match(
       html,
-      /Python Automation \| Java &amp; Spring Boot \| Backend APIs \| AI &amp; MCP Integrations/
+      /Python Automation \| Backend Engineering \| Java &amp; Spring Boot \| AI &amp; MCP Integrations/
     );
-    assert.match(html, /specializing in Python automation, Java\/Spring Boot backend engineering/);
+    assert.match(html, /I build reliable software, intelligent automation, and scalable backend integrations/);
   });
 
   it("includes the five hero actions", () => {
     const hero = section(html, "home");
-    assert.match(hero, /href="#projects">View Projects</);
+    assert.match(hero, /href="#projects">View My Work</);
     assert.match(hero, /Download Resume/);
     assert.match(hero, /href="https:\/\/www\.linkedin\.com\/in\/chathurya-burraveni-a903b9179\/"[^>]*>LinkedIn</);
     assert.match(hero, /href="https:\/\/github\.com\/Chathurya012-ai"[^>]*>GitHub</);
@@ -180,6 +180,19 @@ describe("skills, projects, education, certifications", () => {
 
   it("groups the requested skills and omits unconfirmed C# and Kubernetes", () => {
     const skills = section(html, "skills");
+    for (const group of [
+      "Programming Languages",
+      "Backend Development",
+      "Frontend Development",
+      "Python Automation",
+      "AI &amp; MCP Integrations",
+      "APIs &amp; Enterprise Integrations",
+      "Cloud &amp; DevOps",
+      "Databases",
+      "Testing &amp; Developer Tools",
+    ]) {
+      assert.match(skills, new RegExp(group));
+    }
     for (const skill of [
       "Python",
       "Java",
@@ -215,7 +228,10 @@ describe("skills, projects, education, certifications", () => {
     assert.match(projects, /86% accuracy/);
     assert.match(projects, /95% accuracy/);
     assert.match(projects, /href="https:\/\/github\.com\/Chathurya012-ai\/TalkMate"/);
-    assert.equal((projects.match(/View on GitHub/g) || []).length, 1);
+    assert.match(projects, /Problem/);
+    assert.match(projects, /Contribution/);
+    assert.match(projects, /Approach/);
+    assert.equal((projects.match(/github\.com/g) || []).length, 1);
   });
 
   it("shows the requested education and certifications", () => {
@@ -259,6 +275,14 @@ describe("accessibility, SEO, and GitHub Pages paths", () => {
     assert.match(html, /src="profile.jpeg"/);
     assert.match(html, /href="My_resume.pdf"/);
     assert.doesNotMatch(html, /href="\/style.css"|src="\/script.js"/);
+  });
+
+  it("offsets section hashes to the heading below the sticky nav instead of stacking padding", () => {
+    assert.match(css, /--header-height:\s*4\.6rem/);
+    assert.match(css, /--scroll-gap:\s*1\.25rem/);
+    assert.match(css, /scroll-padding-top:\s*calc\(var\(--header-height\) \+ var\(--scroll-gap\)\)/);
+    assert.match(css, /scroll-margin-top:\s*calc\(0px - var\(--section-pad-y\)\)/);
+    assert.doesNotMatch(css, /scroll-padding-top:\s*5\.6rem/);
   });
 });
 
